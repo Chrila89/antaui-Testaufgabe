@@ -47,24 +47,39 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
     }
 }
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
 </head>
-<body>
-    <h1>Login</h1>
+<body bgcolor="#b18ddfff">
+    <h1 style="text-align: center;">Login</h1>
+
     <form action="login.php" method="post">
-        <label>Benutzername:</label><br>
-        <input type="text" name="username"><br><br>
-
-        <label>Passwort:</label><br>
-        <input type="password" name="password"><br><br>
-
-        <button type="submit" style="background-color: #0077cc; color: white; border: none; padding: 8px 14px; border-radius: 4px;">
-            Anmelden
-        </button>
+        <table align="center" cellpadding="5">
+            <tr>
+                <td><label for="username">Benutzername:</label></td>
+                <td><input type="text" id="username" name="username"></td>
+            </tr>
+            <tr>
+                <td><label for="password">Passwort:</label></td>
+                <td><input type="password" id="password" name="password"></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <button type="submit">Anmelden</button>
+                </td>
+            </tr>
+            <?php if(!empty($message)): ?>
+            <tr>
+                <td colspan="2" align="center" style="color: red;">
+                    <?php echo htmlspecialchars($message); ?>
+                </td>
+            </tr>
+            <?php endif; ?>
+        </table>
     </form>
 </body>
 </html>
