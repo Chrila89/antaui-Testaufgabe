@@ -1,9 +1,3 @@
 username,date,action
 user002@domain.org,"2023-02-01 17:46:13","Benutzer wurder gesperrt wegen zu vieler Fehlversuche beim Login"
-user001@domain.org,"2025-08-13 17:25:13","Falsches Passwort"
-user001@domain.org,"2025-08-13 17:27:25","Falsches Passwort"
-user001@domain.org,"2025-08-13 17:27:35","Erfolgreich eingeloggt"
-user001@domain.org,"2025-08-13 17:31:22","Erfolgreich eingeloggt"
-user001@domain.org,"2025-08-13 17:31:25","Erfolgreich eingeloggt"
-user001@domain.org,"2025-08-13 17:35:15","Erfolgreich eingeloggt"
-user001@domain.org,"2025-08-13 17:35:29","Erfolgreich eingeloggt"
+

@@ -32,7 +32,7 @@ class Log
     private function writeCsv($data)
     {
         $fp = fopen($this->file, 'w');
-        fputcsv($fp, ['username', 'timestamp', 'action']);
+        fputcsv($fp, ['username', 'date', 'action']);
         foreach ($data as $row) {
             fputcsv($fp, $row);
         }
@@ -44,7 +44,7 @@ class Log
         $logs = $this->readCsv();
         $logs[] = [
             'username' => $username,
-            'timestamp' => date('Y-m-d H:i:s'),
+            'date' => date('Y-m-d H:i:s'),
             'action' => $action
         ];
         $this->writeCsv($logs);

@@ -5,7 +5,6 @@ require '../../src/autoload.php';
 use Test\Model\User;
 use Test\Model\Log;
 
-// Falls nicht eingeloggt → zurück zum Login
 if (!isset($_SESSION['username'])) {
     header("Location: login.php");
     exit;
@@ -13,16 +12,13 @@ if (!isset($_SESSION['username'])) {
 
 $username = $_SESSION['username'];
 
-// CSV laden
 $userModel = new User('../../data/user.csv');
 $logModel = new Log('../../data/log.csv');
 
-// User-Daten holen
 $user = $userModel->getUserByUsername($username);
-
-// Letzte 5 Logs holen
 $logs = $logModel->getLogsByUser($username, 5);
 ?>
+
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -37,7 +33,7 @@ $logs = $logModel->getLogsByUser($username, 5);
     <ul>
         <?php if (!empty($logs)): ?>
             <?php foreach ($logs as $log): ?>
-                <li><?= htmlspecialchars($log['timestamp']) ?> - <?= htmlspecialchars($log['action']) ?></li>
+                <li><?= htmlspecialchars($log['date']) ?> - <?= htmlspecialchars($log['action']) ?></li>
             <?php endforeach; ?>
         <?php else: ?>
             <li>Keine Aktivitäten gefunden</li>
