@@ -37,7 +37,7 @@ class LoginController {
 
             if (($user['failed'] + 1) >= 3) {
                 $this->userModel->blockUser($username);
-                $this->logModel->addLog($username, "Benutzer gesperrt wegen zu vieler Fehlversuche");
+                $this->logModel->addLog($username, "Benutzer wurde gesperrt wegen zu vieler Fehlversuche beim Login");
             }
             return false;
         }
